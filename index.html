@@ -1,16 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <input type="text" name="name" list="example">
-
-  <datalist id="example">
-  </datalist>
-  <script src="javascript/poke.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label
+      >ポケモン
+      <input type="text" name="name" list="pokeName" id="inputName" /> </label
+    ><br />
+    <label>性格 <input type="text" list="nature" id="inputNature" /> </label
+    ><br />
+    <label
+      >もちもの
+      <input type="text" name="name" list="items" id="inputItem" /> </label
+    ><br />
+    <label
+      >努力値
+      <div>
+        HP:<input type="tel" /> こうげき:<input type="tel" /> ぼうぎょ:<input
+          type="tel"
+        />
+        とくこう:<input type="tel" /> とくぼう:<input type="tel" />
+        すばやさ:<input type="tel" />
+      </div>
+    </label>
+    <label
+      >個体値
+      <div>
+        HP:
+        <select class="num"></select>
+        こうげき:
+        <select class="num"></select>
+        ぼうぎょ:
+        <select class="num"></select>
+        とくこう:
+        <select class="num"></select>
+        とくぼう:
+        <select class="num"></select>
+        すばやさ:
+        <select class="num"></select>
+      </div>
+    </label>
+    <label>とくせい <input type="text" name="name" list="abilities" /> </label
+    ><br />
+    <label
+      >わざ
+      <input type="text" name="name" list="moves" />
+      <input type="text" name="name" list="moves" />
+      <input type="text" name="name" list="moves" />
+      <input type="text" name="name" list="moves" /> </label
+    ><br />
+    <div>
+      <datalist id="pokeName"> </datalist>
+      <datalist id="items"> </datalist>
+      <datalist id="moves"> </datalist>
+      <datalist id="abilities"> </datalist>
+      <datalist id="nature"> </datalist>
+    </div>
+    <div id="result">
+      <p><span id="resultName"></span> @ <span id="resultItem"></span></p>
+      <p>Ability:</p>
+      <p>EVs:</p>
+      <p></p>
+      <p>Nature</p>
+      <div>
+        <p id="resultMove1"></p>
+        <p id="resultMove2"></p>
+        <p id="resultMove3"></p>
+        <p id="resultMove4"></p>
+      </div>
+    </div>
+    <script src="javascript/poke.js" type="module"></script>
+  </body>
 </html>

@@ -1,4 +1,4 @@
-{
+export const abilities = {
 "ARシステム":"RKS System",
 "アイスフェイス":"Ice Face",
 "アイスボディ":"Ice Body",
@@ -90,7 +90,8 @@
 "じょうききかん":"Steam Engine",
 "じょおうのいげん":"Queenly Majesty",
 "じりょく":"Magnet Pull",
-"じんばいったい":"As One",
+"じんばいったい(こくば)":"As One (Spectrier)",
+"じんばいったい(はくば)":"As One (Glastrier)",
 "すいすい":"Swift Swim",
 "スイートベール":"Sweet Veil",
 "すいほう":"Water Bubble",

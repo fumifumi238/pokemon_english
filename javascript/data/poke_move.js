@@ -1,4 +1,4 @@
-{"1000まんボルト":"10,000,000 Volt Thunderbolt",
+export const moves = {"1000まんボルト":"10,000,000 Volt Thunderbolt",
 "10まんばりき":"High Horsepower",
 "10まんボルト":"Thunderbolt",
 "DDラリアット":"Darkest Lariat",

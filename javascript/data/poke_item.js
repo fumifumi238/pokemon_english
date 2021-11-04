@@ -1,4 +1,4 @@
-{
+export const items = {
 "アイスメモリ":"Ice Memory",
 "あおぞらプレート":"Sky Plate",
 "あおぼんぐり":"Blue Apricorn",

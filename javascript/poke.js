@@ -48,3 +48,65 @@ inputItem.addEventListener("change", function () {
     target.textContent = items[inputItem.value];
   }
 });
+
+const inputNature = document.getElementById("inputNature");
+inputNature.addEventListener("change", function () {
+  if (nature[inputNature.value] !== undefined) {
+    const target = document.getElementById("resultNature");
+    target.textContent = nature[inputNature.value];
+  }
+});
+
+const inputAbility = document.getElementById("inputAbility");
+inputAbility.addEventListener("change", function () {
+  if (abilities[inputAbility.value] !== undefined) {
+    const target = document.getElementById("resultAbility");
+    target.textContent = abilities[inputAbility.value];
+  }
+});
+
+const inputMoves = document.getElementById('inputMoves');
+const moveCount = inputMoves.childElementCount;
+console.log(moveCount)
+for(let i=0;i<moveCount;i++){
+  inputMoves.children[i].addEventListener("change",function(){
+      if (moves[inputMoves.children[i].value] !== undefined) {
+        const target = document.getElementById(`resultMove${i+1}`);
+        target.textContent = `- ${moves[inputMoves.children[i].value]}`;
+      }
+  })
+}
+
+
+const copyButton = document.getElementById('copyButton');
+copyButton.addEventListener('click',function(){
+  const result = document.getElementById('result')
+  const resultCount = result.childElementCount;
+  let text = ""
+  console.log(resultCount)
+  for(let i=0;i<resultCount;i++){
+    console.log(result.children[i].textContent)
+    text += result.children[i].textContent + "\n";
+  }
+  navigator.clipboard.writeText(text).then(
+    function () {
+      // コピーに成功した場合の処理
+      document.querySelector("#copyCompleted").textContent =
+        "コピーしました";
+    },
+    function () {
+      // コピーに失敗した場合の処理
+            document.querySelector("#copyCompleted").textContent =
+              "コピーできませんでした";
+    }
+  );;
+})
+
+// TODO
+const inputEvs = document.getElementById('inputEvs');
+const evsCount = inputEvs.childElementCount;
+for(let i=0;i<evsCount;i++){
+  inputEvs.children[i].addEventListener('change',function(){
+      console.log(inputEvs.children[i].value);
+  })
+}

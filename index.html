@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style type="text/css">
+      p {
+        line-height: 5px;
+      }
+    </style>
   </head>
   <body>
     <label
@@ -19,12 +24,10 @@
     ><br />
     <label
       >努力値
-      <div>
-        HP:<input type="tel" /> こうげき:<input type="tel" /> ぼうぎょ:<input
-          type="tel"
-        />
-        とくこう:<input type="tel" /> とくぼう:<input type="tel" />
-        すばやさ:<input type="tel" />
+      <div id="inputEvs">
+        HP:<input type="number" min="0" max="252" id="hp" /> こうげき:<input type="number"  min="0" max="252" id="atk" />
+        ぼうぎょ:<input type="number"  min="0" max="252" id="def" /> とくこう:<input type="number"  min="0" max="252" id="spa" />
+        とくぼう:<input type="number"  min="0" max="252" id="spd" /> すばやさ:<input type="number"  min="0" max="252" id="spe" />
       </div>
     </label>
     <label
@@ -44,14 +47,27 @@
         <select class="num"></select>
       </div>
     </label>
-    <label>とくせい <input type="text" name="name" list="abilities" /> </label
+    <label
+      >とくせい
+      <input
+        type="text"
+        name="name"
+        list="abilities"
+        id="inputAbility"
+      /> </label
     ><br />
     <label
       >わざ
-      <input type="text" name="name" list="moves" />
-      <input type="text" name="name" list="moves" />
-      <input type="text" name="name" list="moves" />
-      <input type="text" name="name" list="moves" /> </label
+      <div id="inputMoves">
+        <input type="text" name="name" list="moves" id="inputMove1" />
+        <input type="text" name="name" list="moves" id="inputMove2" />
+        <input type="text" name="name" list="moves" id="inputMove3" />
+        <input
+          type="text"
+          name="name"
+          list="moves"
+          id="inputMove4"
+        /></div></label
     ><br />
     <div>
       <datalist id="pokeName"> </datalist>
@@ -60,19 +76,19 @@
       <datalist id="abilities"> </datalist>
       <datalist id="nature"> </datalist>
     </div>
-    <div id="result">
+    <div class="result" id="result">
       <p><span id="resultName"></span> @ <span id="resultItem"></span></p>
-      <p>Ability:</p>
+      <p>Ability: <span id="resultAbility"></span></p>
       <p>EVs:</p>
-      <p></p>
-      <p>Nature</p>
-      <div>
-        <p id="resultMove1"></p>
-        <p id="resultMove2"></p>
-        <p id="resultMove3"></p>
-        <p id="resultMove4"></p>
-      </div>
+      <!-- <p>個体値</p> -->
+      <p><span id="resultNature"></span> Nature</p>
+      <p id="resultMove1"></p>
+      <p id="resultMove2"></p>
+      <p id="resultMove3"></p>
+      <p id="resultMove4"></p>
     </div>
+    <button id="copyButton">コピーする</button>
+    <p id="copyCompleted"></p>
     <script src="javascript/poke.js" type="module"></script>
   </body>
 </html>

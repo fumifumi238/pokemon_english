@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style type="text/css">
-      p {
-        line-height: 5px;
-      }
-    </style>
+    <!-- <style type="text/css">
+
+    </style> -->
   </head>
   <body>
+    <h1>SHOW DOWN ! text generator</h1>
     <label
       >ポケモン
       <input type="text" name="name" list="pokeName" id="inputName" /> </label
@@ -32,7 +31,7 @@
     </label>
     <label
       >個体値
-      <div>
+      <div id="inputIvs">
         HP:
         <select class="num"></select>
         こうげき:
@@ -79,9 +78,9 @@
     <div class="result" id="result">
       <p><span id="resultName"></span> @ <span id="resultItem"></span></p>
       <p>Ability: <span id="resultAbility"></span></p>
-      <p>EVs:</p>
-      <!-- <p>個体値</p> -->
+      <p id="resultEvs">EVs: <span></span> HP / <span></span> Atk / <span></span> Def / <span></span> SpA / <span></span> SpD / <span></span> Spe</p>
       <p><span id="resultNature"></span> Nature</p>
+      <p id="resultIvs">IVs: <span></span> HP / <span></span> Atk / <span></span> Def / <span></span> SpA / <span></span> SpD / <span></span> Spe</p>
       <p id="resultMove1"></p>
       <p id="resultMove2"></p>
       <p id="resultMove3"></p>
@@ -89,6 +88,7 @@
     </div>
     <button id="copyButton">コピーする</button>
     <p id="copyCompleted"></p>
+    <h2>リセットするには再読み込みしてください。</h2>
     <script src="javascript/poke.js" type="module"></script>
   </body>
 </html>

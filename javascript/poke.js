@@ -33,37 +33,19 @@ function selectNumber() {
   }
 }
 
-const inputName = document.getElementById("inputName");
-inputName.addEventListener("change", function () {
-  if (pokeName[inputName.value] !== undefined) {
-    const target = document.getElementById("resultName");
-    target.textContent = pokeName[inputName.value];
-  }
-});
-
-const inputItem = document.getElementById("inputItem");
-inputItem.addEventListener("change", function () {
-  if (items[inputItem.value] !== undefined) {
-    const target = document.getElementById("resultItem");
-    target.textContent = items[inputItem.value];
-  }
-});
-
-const inputNature = document.getElementById("inputNature");
-inputNature.addEventListener("change", function () {
-  if (nature[inputNature.value] !== undefined) {
-    const target = document.getElementById("resultNature");
-    target.textContent = nature[inputNature.value];
-  }
-});
-
-const inputAbility = document.getElementById("inputAbility");
-inputAbility.addEventListener("change", function () {
-  if (abilities[inputAbility.value] !== undefined) {
-    const target = document.getElementById("resultAbility");
-    target.textContent = abilities[inputAbility.value];
-  }
-});
+renderText("inputName","resultName",pokeName);
+renderText("inputItem", "resultItem", items);
+renderText("inputNature","resultNature",nature);
+renderText("inputAbility", "resultAbility", abilities);
+function renderText(inputId,resultId,data){
+  const input = document.getElementById(inputId);
+ input.addEventListener("change", function () {
+   if (data[input.value] !== undefined) {
+     const result = document.getElementById(resultId);
+     result.textContent = data[input.value];
+   }
+ });
+}
 
 const inputMoves = document.getElementById('inputMoves');
 const moveCount = inputMoves.childElementCount;
@@ -102,11 +84,18 @@ copyButton.addEventListener('click',function(){
   );;
 })
 
-// TODO
-const inputEvs = document.getElementById('inputEvs');
-const evsCount = inputEvs.childElementCount;
-for(let i=0;i<evsCount;i++){
-  inputEvs.children[i].addEventListener('change',function(){
-      console.log(inputEvs.children[i].value);
-  })
+renderEvsIvs("inputEvs","resultEvs",0,252)
+renderEvsIvs("inputIvs", "resultIvs", 0, 31);
+function renderEvsIvs(inputId,resultId,min,max){
+  const input = document.getElementById(inputId);
+  const result = document.getElementById(resultId);
+  const count =  input.childElementCount;
+  for (let i = 0; i < count; i++) {
+    input.children[i].addEventListener("change", function () {
+      const value = input.children[i].value;
+      if (Number(value) >= min && Number(value) <= max) {
+        result.children[i].textContent = value;
+      }
+    });
+  }
 }

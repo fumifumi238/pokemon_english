@@ -40,9 +40,10 @@ renderText("inputAbility", "resultAbility", abilities);
 function renderText(inputId, resultId, data) {
   const input = document.getElementById(inputId);
   input.addEventListener("change", function () {
-    if (data[input.value] !== undefined) {
+    const inputValue = data[input.value];
+    if (inputValue !== undefined) {
       const result = document.getElementById(resultId);
-      result.textContent = data[input.value];
+      result.textContent = inputValue;
     }
   });
 }
@@ -52,9 +53,10 @@ const moveCount = inputMoves.childElementCount;
 console.log(moveCount);
 for (let i = 0; i < moveCount; i++) {
   inputMoves.children[i].addEventListener("change", function () {
-    if (moves[inputMoves.children[i].value] !== undefined) {
+    let inputValue = moves[inputMoves.children[i].value];
+    if (inputValue !== undefined) {
       const target = document.getElementById(`resultMove${i + 1}`);
-      target.textContent = `- ${moves[inputMoves.children[i].value]}`;
+      target.textContent = `- ${inputValue}`;
     }
   });
 }

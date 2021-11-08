@@ -97,3 +97,17 @@ function renderEvsIvs(inputId, resultId, min, max) {
     });
   }
 }
+
+sumEvs()
+function sumEvs(){
+    const inputEvs = document.getElementById('inputEvs');
+    const count = inputEvs.childElementCount;
+    inputEvs.addEventListener("change",function(){
+      let sum = 508;
+      for(let i=0;i<count;i++){
+        let value = Number(inputEvs.children[i].value);
+        sum -= value;
+      }
+      document.getElementById("sumEvs").textContent = `残り: ${sum}`;
+    })
+}

@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHOW DOWN ! text generator</title>
+    <style type="text/css">
+      p{
+        margin: 0%;
+      }
+    </style>
   </head>
   <body>
     <label
@@ -31,7 +36,7 @@
         とくぼう:<input type="number" min="0" max="252" id="spd" />
         すばやさ:<input type="number" min="0" max="252" id="spe" />
       </div>
-    </label>
+    </label> <p id="sumEvs">残り: 508</p>
     <label
       >個体値
       <div id="inputIvs">
@@ -70,7 +75,7 @@
           list="moves"
           id="inputMove4"
         /></div></label
-    ><br />
+    >
     <div>
       <datalist id="pokeName"> </datalist>
       <datalist id="items"> </datalist>
@@ -81,15 +86,9 @@
     <div class="result" id="result">
       <p><span id="resultName"></span> @ <span id="resultItem"></span></p>
       <p>Ability: <span id="resultAbility"></span></p>
-      <p id="resultEvs">
-        EVs: <span></span> HP / <span></span> Atk / <span></span> Def /
-        <span></span> SpA / <span></span> SpD / <span></span> Spe
-      </p>
+      <p id="resultEvs">EVs: <span></span> HP / <span></span> Atk / <span></span> Def / <span></span> SpA / <span></span> SpD / <span></span> Spe</p>
       <p><span id="resultNature"></span> Nature</p>
-      <p id="resultIvs">
-        IVs: <span></span> HP / <span></span> Atk / <span></span> Def /
-        <span></span> SpA / <span></span> SpD / <span></span> Spe
-      </p>
+      <p id="resultIvs">IVs: <span></span> HP / <span></span> Atk / <span></span> Def / <span></span> SpA / <span></span> SpD / <span></span> Spe</p>
       <p id="resultMove1"></p>
       <p id="resultMove2"></p>
       <p id="resultMove3"></p>

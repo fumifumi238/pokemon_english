@@ -33,63 +33,61 @@ function selectNumber() {
   }
 }
 
-renderText("inputName","resultName",pokeName);
+renderText("inputName", "resultName", pokeName);
 renderText("inputItem", "resultItem", items);
-renderText("inputNature","resultNature",nature);
+renderText("inputNature", "resultNature", nature);
 renderText("inputAbility", "resultAbility", abilities);
-function renderText(inputId,resultId,data){
+function renderText(inputId, resultId, data) {
   const input = document.getElementById(inputId);
- input.addEventListener("change", function () {
-   if (data[input.value] !== undefined) {
-     const result = document.getElementById(resultId);
-     result.textContent = data[input.value];
-   }
- });
+  input.addEventListener("change", function () {
+    if (data[input.value] !== undefined) {
+      const result = document.getElementById(resultId);
+      result.textContent = data[input.value];
+    }
+  });
 }
 
-const inputMoves = document.getElementById('inputMoves');
+const inputMoves = document.getElementById("inputMoves");
 const moveCount = inputMoves.childElementCount;
-console.log(moveCount)
-for(let i=0;i<moveCount;i++){
-  inputMoves.children[i].addEventListener("change",function(){
-      if (moves[inputMoves.children[i].value] !== undefined) {
-        const target = document.getElementById(`resultMove${i+1}`);
-        target.textContent = `- ${moves[inputMoves.children[i].value]}`;
-      }
-  })
+console.log(moveCount);
+for (let i = 0; i < moveCount; i++) {
+  inputMoves.children[i].addEventListener("change", function () {
+    if (moves[inputMoves.children[i].value] !== undefined) {
+      const target = document.getElementById(`resultMove${i + 1}`);
+      target.textContent = `- ${moves[inputMoves.children[i].value]}`;
+    }
+  });
 }
 
-
-const copyButton = document.getElementById('copyButton');
-copyButton.addEventListener('click',function(){
-  const result = document.getElementById('result')
+const copyButton = document.getElementById("copyButton");
+copyButton.addEventListener("click", function () {
+  const result = document.getElementById("result");
   const resultCount = result.childElementCount;
-  let text = ""
-  console.log(resultCount)
-  for(let i=0;i<resultCount;i++){
-    console.log(result.children[i].textContent)
+  let text = "";
+  console.log(resultCount);
+  for (let i = 0; i < resultCount; i++) {
     text += result.children[i].textContent + "\n";
   }
+  let copiedMessage = document.querySelector("#copiedMessage");
   navigator.clipboard.writeText(text).then(
     function () {
-      // コピーに成功した場合の処理
-      document.querySelector("#copyCompleted").textContent =
-        "コピーしました";
+      copiedMessage.textContent = "コピーしました";
+      setTimeout(function () {
+        copiedMessage.textContent = "";
+      }, 1000);
     },
     function () {
-      // コピーに失敗した場合の処理
-            document.querySelector("#copyCompleted").textContent =
-              "コピーできませんでした";
+      copiedMessage.textContent = "コピーできませんでした";
     }
-  );;
-})
+  );
+});
 
-renderEvsIvs("inputEvs","resultEvs",0,252)
+renderEvsIvs("inputEvs", "resultEvs", 0, 252);
 renderEvsIvs("inputIvs", "resultIvs", 0, 31);
-function renderEvsIvs(inputId,resultId,min,max){
+function renderEvsIvs(inputId, resultId, min, max) {
   const input = document.getElementById(inputId);
   const result = document.getElementById(resultId);
-  const count =  input.childElementCount;
+  const count = input.childElementCount;
   for (let i = 0; i < count; i++) {
     input.children[i].addEventListener("change", function () {
       const value = input.children[i].value;

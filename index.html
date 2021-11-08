@@ -5,12 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHOW DOWN ! text generator</title>
-    <!-- <style type="text/css">
-
-    </style> -->
   </head>
   <body>
-    <h1>SHOW DOWN ! text generator</h1>
     <label
       >ポケモン
       <input type="text" name="name" list="pokeName" id="inputName" /> </label
@@ -24,9 +20,16 @@
     <label
       >努力値
       <div id="inputEvs">
-        HP:<input type="number" min="0" max="252" id="hp" /> こうげき:<input type="number"  min="0" max="252" id="atk" />
-        ぼうぎょ:<input type="number"  min="0" max="252" id="def" /> とくこう:<input type="number"  min="0" max="252" id="spa" />
-        とくぼう:<input type="number"  min="0" max="252" id="spd" /> すばやさ:<input type="number"  min="0" max="252" id="spe" />
+        HP:<input type="number" min="0" max="252" id="hp" /> こうげき:<input
+          type="number"
+          min="0"
+          max="252"
+          id="atk"
+        />
+        ぼうぎょ:<input type="number" min="0" max="252" id="def" />
+        とくこう:<input type="number" min="0" max="252" id="spa" />
+        とくぼう:<input type="number" min="0" max="252" id="spd" />
+        すばやさ:<input type="number" min="0" max="252" id="spe" />
       </div>
     </label>
     <label
@@ -78,16 +81,22 @@
     <div class="result" id="result">
       <p><span id="resultName"></span> @ <span id="resultItem"></span></p>
       <p>Ability: <span id="resultAbility"></span></p>
-      <p id="resultEvs">EVs: <span></span> HP / <span></span> Atk / <span></span> Def / <span></span> SpA / <span></span> SpD / <span></span> Spe</p>
+      <p id="resultEvs">
+        EVs: <span></span> HP / <span></span> Atk / <span></span> Def /
+        <span></span> SpA / <span></span> SpD / <span></span> Spe
+      </p>
       <p><span id="resultNature"></span> Nature</p>
-      <p id="resultIvs">IVs: <span></span> HP / <span></span> Atk / <span></span> Def / <span></span> SpA / <span></span> SpD / <span></span> Spe</p>
+      <p id="resultIvs">
+        IVs: <span></span> HP / <span></span> Atk / <span></span> Def /
+        <span></span> SpA / <span></span> SpD / <span></span> Spe
+      </p>
       <p id="resultMove1"></p>
       <p id="resultMove2"></p>
       <p id="resultMove3"></p>
       <p id="resultMove4"></p>
     </div>
     <button id="copyButton">コピーする</button>
-    <p id="copyCompleted"></p>
+    <p id="copiedMessage"></p>
     <h2>リセットするには再読み込みしてください。</h2>
     <script src="javascript/poke.js" type="module"></script>
   </body>
